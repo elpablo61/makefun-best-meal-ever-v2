@@ -6,6 +6,12 @@ import { join } from "node:path";
 const ENTRY =
   "Pak Budi's soto ayam at 7:15 on my first morning in Yogyakarta cost eight thousand rupiah, and the broth was so hot I burned my tongue and ordered a second bowl anyway.";
 
+// The gate refuses entries over 200 characters, so fail loudly instead of
+// silently submitting an invalid entry.
+if (ENTRY.length > 200) {
+  throw new Error(`entry is ${ENTRY.length} characters, over the 200 limit`);
+}
+
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "entry.txt"), ENTRY, "utf8");
