@@ -1,0 +1,1 @@
+{"description":"make.fun entry: The Best Meal You Ever Had — one sentence, at most 200 characters","license":"MIT","main":"main.ts","name":"makefun-best-meal-ever-v2","private":true,"scripts":{"start":"node main.ts"},"type":"module","version":"1.0.0"}
